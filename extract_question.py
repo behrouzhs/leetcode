@@ -68,13 +68,15 @@ def initialize_question(dct_question_info: dict):
     with open(f'{folder}/{qid}.html', 'wt') as fp:
         fp.write(dct_info['content'] + '\n')
     
-    with open(f'{folder}/{qid}.py', 'wt') as fp:
-        fp.write(f'# URL: https://leetcode.com/problems/{dct_info["titleSlug"]}\n')
-        fp.write(f'# Title: {dct_info["questionFrontendId"]}. {dct_info["title"]}\n')
-        fp.write(f'# Difficulty: {dct_info["difficulty"]}\n')
-        fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n\n\n')
-        fp.write(f'question = """\n{question_text}\n"""\n\n')
-        fp.write(f'{code}pass\n')
+    if not os.path.exists(f'{folder}/{qid}.py'):
+        with open(f'{folder}/{qid}.py', 'wt') as fp:
+            fp.write(f'# URL: https://leetcode.com/problems/{dct_info["titleSlug"]}\n')
+            fp.write(f'# Title: {dct_info["questionFrontendId"]}. {dct_info["title"]}\n')
+            fp.write(f'# Difficulty: {dct_info["difficulty"]}\n')
+            fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n\n\n')
+            fp.write(f'question = """\n{question_text}\n"""\n\n')
+            if code:
+                fp.write(f'{code}pass\n')
 
 
 if __name__ == '__main__':
