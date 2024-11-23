@@ -56,7 +56,9 @@ def initialize_question(dct_question_info: dict):
     if len(code) == 0:
         code = [item for item in dct_info['codeSnippets'] if item['lang'].lower() == 'python']
     code = code[0]['code'] if len(code) > 0 else ''
-    question_text = BeautifulSoup(dct_info['content'], 'html.parser').text.replace('\xa0', ' ')
+    html_content = dct_info['content']
+    html_content = re.sub(r"<sup>(.*?)</sup>", r"^\1", html_content)
+    question_text = BeautifulSoup(html_content, 'html.parser').text.replace('\xa0', ' ')
     qid = f'{question_id}_{title}'
     folder = f'./{difficulty}/{qid}/'
 
@@ -73,10 +75,13 @@ def initialize_question(dct_question_info: dict):
             fp.write(f'# URL: https://leetcode.com/problems/{dct_info["titleSlug"]}\n')
             fp.write(f'# Title: {dct_info["questionFrontendId"]}. {dct_info["title"]}\n')
             fp.write(f'# Difficulty: {dct_info["difficulty"]}\n')
-            fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n\n\n')
+            fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n')
+            fp.write(f'# Likes: {dct_info["likes"]}, Dislikes: {dct_info["dislikes"]}\n\n\n')
             fp.write(f'question = """\n{question_text}\n"""\n\n')
             if code:
                 fp.write(f'{code}pass\n')
+    else:
+        print(f'{folder}/{qid}.py already exists')
 
 
 if __name__ == '__main__':
