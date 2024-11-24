@@ -54,7 +54,7 @@ def extract_question_info(url: str):
     payload = {
         "operationName": "questionData",
         "variables": {"titleSlug": title_slug},
-        "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId\n    questionFrontendId\n    boundTopicId\n    title\n    titleSlug\n    content\n    translatedTitle\n    translatedContent\n    isPaidOnly\n    difficulty\n    likes\n    dislikes\n    isLiked\n    similarQuestions\n    contributors {\n      username\n      profileUrl\n      avatarUrl\n      __typename\n    }\n    langToValidPlayground\n    topicTags {\n      name\n      slug\n      translatedName\n      __typename\n    }\n    companyTagStats\n    codeSnippets {\n      lang\n      langSlug\n      code\n      __typename\n    }\n    stats\n    hints\n    solution {\n      id\n      canSeeDetail\n      __typename\n    }\n    status\n    sampleTestCase\n    metaData\n    judgerAvailable\n    judgeType\n    mysqlSchemas\n    enableRunCode\n    enableTestMode\n    envInfo\n    __typename\n  }\n}\n"
+        "query": "query questionData($titleSlug: String!) {\n  question(titleSlug: $titleSlug) {\n    questionId\n    questionFrontendId\n    boundTopicId\n    title\n    titleSlug\n    content\n    translatedTitle\n    translatedContent\n    isPaidOnly\n    difficulty\n    likes\n    dislikes\n    isLiked\n    similarQuestions\n    contributors {\n      username\n      profileUrl\n      avatarUrl\n      }\n    langToValidPlayground\n    topicTags {\n      name\n      slug\n      translatedName\n      }\n    companyTagStats\n    codeSnippets {\n      lang\n      langSlug\n      code\n      }\n    stats\n    hints\n    solution {\n      id\n      canSeeDetail\n      }\n    status\n    sampleTestCase\n    metaData\n    judgerAvailable\n    judgeType\n    mysqlSchemas\n    enableRunCode\n    enableTestMode\n    envInfo\n  }\n}\n"
     }
 
     res = requests.post('https://leetcode.com/graphql', headers=headers, json=payload)
@@ -88,7 +88,8 @@ def initialize_question(dct_question_info: dict):
             fp.write(f'# Title: {dct_info["questionFrontendId"]}. {dct_info["title"]}\n')
             fp.write(f'# Difficulty: {dct_info["difficulty"]}\n')
             fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n')
-            fp.write(f'# Likes: {dct_info["likes"]}, Dislikes: {dct_info["dislikes"]}\n\n\n')
+            fp.write(f'# Likes: {dct_info["likes"]}, Dislikes: {dct_info["dislikes"]}\n')
+            fp.write(f'# Submitted: {dct_info["stats"]["totalSubmission"]}, Accepted: {dct_info["stats"]["totalAccepted"]} ({dct_info["stats"]["acRate"]})\n\n\n')
             fp.write(f'question = """\n{dct_info["content_text"]}\n"""\n\n')
             if code:
                 fp.write(f'{code}pass\n')
