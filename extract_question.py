@@ -71,7 +71,7 @@ def initialize_question(dct_question_info: dict):
     if len(code) == 0:
         code = [item for item in dct_info['codeSnippets'] if item['lang'].lower() == 'python']
     code = code[0]['code'] if len(code) > 0 else ''
-    qid = f'{question_id}_{title}'
+    qid = f'q_{question_id}_{title}'
     folder = f'./{difficulty}/{qid}/'
 
     if not os.path.exists(folder):
