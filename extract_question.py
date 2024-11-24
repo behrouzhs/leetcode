@@ -17,6 +17,23 @@ def to_snake_case(text: str):
     return text.strip('_')
 
 
+def clean_dict(dct_info: dict):
+    html_content = dct_info['data']['question']['content']
+    html_content = re.sub(r"<sup>(.*?)</sup>", r"^\1", html_content)
+    dct_info['data']['question']['content_text'] = BeautifulSoup(html_content, 'html.parser').text.replace('\xa0', ' ')
+
+    dct_info['data']['question']['topics'] = [item['name'] for item in dct_info['data']['question']['topicTags']]
+    dct_info['data']['question']['similarQuestions'] = json.loads(dct_info['data']['question']['similarQuestions'])
+    dct_info['data']['question']['langToValidPlayground'] = json.loads(dct_info['data']['question']['langToValidPlayground'])
+    dct_info['data']['question']['stats'] = json.loads(dct_info['data']['question']['stats'])
+    dct_info['data']['question']['metaData'] = json.loads(dct_info['data']['question']['metaData'])
+    dct_info['data']['question']['envInfo'] = json.loads(dct_info['data']['question']['envInfo'])
+    for item in dct_info['data']['question']['similarQuestions']:
+        item['link'] = f"https://leetcode.com/problems/{item['titleSlug']}"
+    dct_info['data']['question']['similarQuestionsLink'] = [item['link'] for item in dct_info['data']['question']['similarQuestions']]
+    return dct_info
+
+
 def extract_question_info(url: str):
     title_slug = url[url.rfind('/') + 1:]
     headers = {
@@ -41,13 +58,11 @@ def extract_question_info(url: str):
     }
 
     res = requests.post('https://leetcode.com/graphql', headers=headers, json=payload)
-    return res.json()
+    res = clean_dict(res.json())
+    return res
 
 
 def initialize_question(dct_question_info: dict):
-    dct_question_info['data']['question']['topics'] = [item['name'] for item in dct_question_info['data']['question']['topicTags']]
-    dct_question_info['data']['question']['similarQuestionsLink'] = [f"https://leetcode.com/problems/{item['titleSlug']}" for item in json.loads(dct_question_info['data']['question']['similarQuestions'])]
-    
     dct_info = dct_question_info['data']['question']
     title = to_snake_case(dct_info['title'])
     question_id = dct_info['questionFrontendId'].zfill(4)
@@ -56,9 +71,6 @@ def initialize_question(dct_question_info: dict):
     if len(code) == 0:
         code = [item for item in dct_info['codeSnippets'] if item['lang'].lower() == 'python']
     code = code[0]['code'] if len(code) > 0 else ''
-    html_content = dct_info['content']
-    html_content = re.sub(r"<sup>(.*?)</sup>", r"^\1", html_content)
-    question_text = BeautifulSoup(html_content, 'html.parser').text.replace('\xa0', ' ')
     qid = f'{question_id}_{title}'
     folder = f'./{difficulty}/{qid}/'
 
@@ -77,7 +89,7 @@ def initialize_question(dct_question_info: dict):
             fp.write(f'# Difficulty: {dct_info["difficulty"]}\n')
             fp.write(f'# Topics: {", ".join(dct_info["topics"])}\n')
             fp.write(f'# Likes: {dct_info["likes"]}, Dislikes: {dct_info["dislikes"]}\n\n\n')
-            fp.write(f'question = """\n{question_text}\n"""\n\n')
+            fp.write(f'question = """\n{dct_info["content_text"]}\n"""\n\n')
             if code:
                 fp.write(f'{code}pass\n')
     else:
