@@ -39,6 +39,13 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n^2) time complexity?
 """
 
+from typing import List
+
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        pass
+        dct = dict()
+        for i, num in enumerate(nums):
+            if (target - num) in dct:
+                return [dct[target - num], i]
+            dct[num] = i
