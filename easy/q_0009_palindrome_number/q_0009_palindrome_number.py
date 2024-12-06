@@ -39,8 +39,25 @@ Follow up: Could you solve it without converting the integer to a string?
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         x_str = str(x)
-        n = len(x_str)
-        for i in range(n // 2):
-            if x_str[i] != x_str[n - i - 1]:
+        num_digits = len(x_str)
+        for i in range(num_digits // 2):
+            if x_str[i] != x_str[num_digits - i - 1]:
+                return False
+        return True
+
+
+class Solution2:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+        
+        digits = []  # if the input number is 0, the list will be remain empty
+        while x > 0:
+            digits.append(x % 10)
+            x = x // 10
+        
+        num_digits = len(digits)
+        for i in range(num_digits // 2):
+            if digits[i] != digits[num_digits - i - 1]:
                 return False
         return True
