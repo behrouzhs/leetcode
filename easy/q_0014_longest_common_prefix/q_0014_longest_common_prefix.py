@@ -31,6 +31,22 @@ strs[i] consists of only lowercase English letters.
 
 """
 
+from typing import List
+
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        pass
+        if not strs or not strs[0]:
+            return ""
+        
+        common_prefix = list()
+        for i, ch in enumerate(strs[0]):
+            mismatch_found = False
+            for string in strs[1:]:
+                if i >= len(string) or string[i] != ch:
+                    mismatch_found = True
+                    break
+            if mismatch_found:
+                break
+            common_prefix.append(ch)
+        return ''.join(common_prefix)
