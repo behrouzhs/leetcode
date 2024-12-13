@@ -27,8 +27,6 @@ Constraints:
 1 <= strs.length <= 200
 0 <= strs[i].length <= 200
 strs[i] consists of only lowercase English letters.
-
-
 """
 
 from typing import List
@@ -50,3 +48,17 @@ class Solution:
                 break
             common_prefix.append(ch)
         return ''.join(common_prefix)
+
+
+class Solution2:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        
+        strs.sort()
+        first, last = strs[0], strs[-1]
+        
+        i = 0
+        while i < len(first) and i < len(last) and first[i] == last[i]:
+            i += 1
+        return first[:i]
