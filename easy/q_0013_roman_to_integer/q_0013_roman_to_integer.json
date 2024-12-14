@@ -1,0 +1,296 @@
+{
+    "data": {
+        "question": {
+            "questionId": "13",
+            "questionFrontendId": "13",
+            "boundTopicId": null,
+            "title": "Roman to Integer",
+            "titleSlug": "roman-to-integer",
+            "content": "<p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>\n\n<pre>\n<strong>Symbol</strong>       <strong>Value</strong>\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000</pre>\n\n<p>For example,&nbsp;<code>2</code> is written as <code>II</code>&nbsp;in Roman numeral, just two ones added together. <code>12</code> is written as&nbsp;<code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>\n\n<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>\n\n<ul>\n\t<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9.&nbsp;</li>\n\t<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90.&nbsp;</li>\n\t<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>\n</ul>\n\n<p>Given a roman numeral, convert it to an integer.</p>\n\n<p>&nbsp;</p>\n<p><strong class=\"example\">Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;III&quot;\n<strong>Output:</strong> 3\n<strong>Explanation:</strong> III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;LVIII&quot;\n<strong>Output:</strong> 58\n<strong>Explanation:</strong> L = 50, V= 5, III = 3.\n</pre>\n\n<p><strong class=\"example\">Example 3:</strong></p>\n\n<pre>\n<strong>Input:</strong> s = &quot;MCMXCIV&quot;\n<strong>Output:</strong> 1994\n<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 15</code></li>\n\t<li><code>s</code> contains only&nbsp;the characters <code>(&#39;I&#39;, &#39;V&#39;, &#39;X&#39;, &#39;L&#39;, &#39;C&#39;, &#39;D&#39;, &#39;M&#39;)</code>.</li>\n\t<li>It is <strong>guaranteed</strong>&nbsp;that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": false,
+            "difficulty": "Easy",
+            "likes": 15047,
+            "dislikes": 1013,
+            "isLiked": null,
+            "similarQuestions": [
+                {
+                    "title": "Integer to Roman",
+                    "titleSlug": "integer-to-roman",
+                    "difficulty": "Medium",
+                    "translatedTitle": null,
+                    "link": "https://leetcode.com/problems/integer-to-roman"
+                }
+            ],
+            "contributors": [],
+            "langToValidPlayground": {
+                "cpp": true,
+                "java": true,
+                "python": true,
+                "python3": true,
+                "mysql": false,
+                "mssql": false,
+                "oraclesql": false,
+                "c": false,
+                "csharp": false,
+                "javascript": false,
+                "typescript": false,
+                "bash": false,
+                "php": false,
+                "swift": false,
+                "kotlin": false,
+                "dart": false,
+                "golang": false,
+                "ruby": false,
+                "scala": false,
+                "html": false,
+                "pythonml": false,
+                "rust": false,
+                "racket": false,
+                "erlang": false,
+                "elixir": false,
+                "pythondata": false,
+                "react": false,
+                "vanillajs": false,
+                "postgresql": false,
+                "cangjie": false
+            },
+            "topicTags": [
+                {
+                    "name": "Hash Table",
+                    "slug": "hash-table",
+                    "translatedName": null
+                },
+                {
+                    "name": "Math",
+                    "slug": "math",
+                    "translatedName": null
+                },
+                {
+                    "name": "String",
+                    "slug": "string",
+                    "translatedName": null
+                }
+            ],
+            "companyTagStats": null,
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class Solution {\npublic:\n    int romanToInt(string s) {\n        \n    }\n};"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class Solution {\n    public int romanToInt(String s) {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class Solution(object):\n    def romanToInt(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: int\n        \"\"\"\n        "
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class Solution:\n    def romanToInt(self, s: str) -> int:\n        "
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "int romanToInt(char* s) {\n    \n}"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class Solution {\n    public int RomanToInt(string s) {\n        \n    }\n}"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * @param {string} s\n * @return {number}\n */\nvar romanToInt = function(s) {\n    \n};"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "function romanToInt(s: string): number {\n    \n};"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class Solution {\n\n    /**\n     * @param String $s\n     * @return Integer\n     */\n    function romanToInt($s) {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "class Solution {\n    func romanToInt(_ s: String) -> Int {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class Solution {\n    fun romanToInt(s: String): Int {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Dart",
+                    "langSlug": "dart",
+                    "code": "class Solution {\n  int romanToInt(String s) {\n    \n  }\n}"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "func romanToInt(s string) int {\n    \n}"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "# @param {String} s\n# @return {Integer}\ndef roman_to_int(s)\n    \nend"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "object Solution {\n    def romanToInt(s: String): Int = {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "impl Solution {\n    pub fn roman_to_int(s: String) -> i32 {\n        \n    }\n}"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define/contract (roman-to-int s)\n  (-> string? exact-integer?)\n  )"
+                },
+                {
+                    "lang": "Erlang",
+                    "langSlug": "erlang",
+                    "code": "-spec roman_to_int(S :: unicode:unicode_binary()) -> integer().\nroman_to_int(S) ->\n  ."
+                },
+                {
+                    "lang": "Elixir",
+                    "langSlug": "elixir",
+                    "code": "defmodule Solution do\n  @spec roman_to_int(s :: String.t) :: integer\n  def roman_to_int(s) do\n    \n  end\nend"
+                }
+            ],
+            "stats": {
+                "totalAccepted": "4.3M",
+                "totalSubmission": "6.8M",
+                "totalAcceptedRaw": 4298559,
+                "totalSubmissionRaw": 6779422,
+                "acRate": "63.4%"
+            },
+            "hints": [
+                "Problem is simpler to solve by working the string from back to front and using a map."
+            ],
+            "solution": {
+                "id": "889",
+                "canSeeDetail": false
+            },
+            "status": null,
+            "sampleTestCase": "\"III\"",
+            "metaData": {
+                "name": "romanToInt",
+                "params": [
+                    {
+                        "name": "s",
+                        "type": "string"
+                    }
+                ],
+                "return": {
+                    "type": "integer"
+                }
+            },
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "envInfo": {
+                "cpp": [
+                    "C++",
+                    "<p>Compiled with <code> clang 19 </code> using the latest C++ 23 standard, and <code>libstdc++</code> provided by GCC 14.</p>\r\n\r\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\"https://github.com/google/sanitizers/wiki/AddressSanitizer\" target=\"_blank\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\r\n\r\n<p>Most standard library headers are already included automatically for your convenience.</p>"
+                ],
+                "java": [
+                    "Java",
+                    "<p><code>OpenJDK 21</code>. Using compile arguments: <code>--enable-preview --release 21</code></p>\r\n\r\n<p>Most standard library headers are already included automatically for your convenience.</p>\r\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>"
+                ],
+                "python": [
+                    "Python",
+                    "<p><code>Python 2.7.18</code>.</p>\r\n\r\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\"https://docs.python.org/2/library/array.html\" target=\"_blank\">array</a>, <a href=\"https://docs.python.org/2/library/bisect.html\" target=\"_blank\">bisect</a>, <a href=\"https://docs.python.org/2/library/collections.html\" target=\"_blank\">collections</a>. If you need more libraries, you can import it yourself.</p>\r\n\r\n<p>For Map/TreeMap data structure, you may use <a href=\"http://www.grantjenks.com/docs/sortedcontainers/\" target=\"_blank\">sortedcontainers</a> library.</p>\r\n\r\n<p>Note that Python 2.7 <a href=\"https://www.python.org/dev/peps/pep-0373/\" target=\"_blank\">is not maintained anymore</a>. For the latest Python, please choose Python3 instead.</p>"
+                ],
+                "c": [
+                    "C",
+                    "<p>Compiled with <code>gcc 14</code> using the gnu11 standard.</p>\r\n\r\n<p>Your code is compiled with level one optimization (<code>-O2</code>). <a href=\"https://github.com/google/sanitizers/wiki/AddressSanitizer\" target=\"_blank\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\r\n\r\n<p>Most standard library headers are already included automatically for your convenience.</p>\r\n\r\n<p>For hash table operations, you may use <a href=\"https://troydhanson.github.io/uthash/\" target=\"_blank\">uthash</a>. \"uthash.h\" is included by default. Below are some examples:</p>\r\n\r\n<p><b>1. Adding an item to a hash.</b>\r\n<pre>\r\nstruct hash_entry {\r\n    int id;            /* we'll use this field as the key */\r\n    char name[10];\r\n    UT_hash_handle hh; /* makes this structure hashable */\r\n};\r\n\r\nstruct hash_entry *users = NULL;\r\n\r\nvoid add_user(struct hash_entry *s) {\r\n    HASH_ADD_INT(users, id, s);\r\n}\r\n</pre>\r\n</p>\r\n\r\n<p><b>2. Looking up an item in a hash:</b>\r\n<pre>\r\nstruct hash_entry *find_user(int user_id) {\r\n    struct hash_entry *s;\r\n    HASH_FIND_INT(users, &user_id, s);\r\n    return s;\r\n}\r\n</pre>\r\n</p>\r\n\r\n<p><b>3. Deleting an item in a hash:</b>\r\n<pre>\r\nvoid delete_user(struct hash_entry *user) {\r\n    HASH_DEL(users, user);  \r\n}\r\n</pre>\r\n</p>"
+                ],
+                "csharp": [
+                    "C#",
+                    "<p><a href=\"https://learn.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-12\" target=\"_blank\">C# 12</a> with .NET 8 runtime</p>"
+                ],
+                "javascript": [
+                    "JavaScript",
+                    "<p><code>Node.js 20.10.0</code>.</p>\r\n\r\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\"http://node.green/\" target=\"_blank\">new ES6 features</a>.</p>\r\n\r\n<p><a href=\"https://lodash.com\" target=\"_blank\">lodash.js</a> library is included by default.</p>\r\n\r\n<p>For Priority Queue / Queue data structures, you may use 5.4.0 version of <a href=\"https://github.com/datastructures-js/priority-queue/blob/v5/README.md\" target=\"_blank\">datastructures-js/priority-queue</a> and 4.2.3 version of <a href=\"https://github.com/datastructures-js/queue/tree/v4.2.3\" target=\"_blank\">datastructures-js/queue</a> and 1.0.4 version of <a href=\"https://github.com/datastructures-js/deque/tree/v1.0.4\" target=\"_blank\">datastructures-js/deque</a>.</p>"
+                ],
+                "ruby": [
+                    "Ruby",
+                    "<p><code>Ruby 3.2</code></p>\r\n\r\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>"
+                ],
+                "swift": [
+                    "Swift",
+                    "<p><code>Swift 5.10</code>.</p>\r\n\r\n<p>You may use <a href=\"https://github.com/apple/swift-algorithms/tree/1.2.0\" target=\"_blank\">swift-algorithms 1.2.0</a> and <a href=\"https://github.com/apple/swift-collections/tree/1.1.4\" target=\"_blank\">swift-collections 1.1.4</a>.</p>"
+                ],
+                "golang": [
+                    "Go",
+                    "<p><code>Go 1.23</code></p>\r\n<p>Support <a href=\"https://pkg.go.dev/github.com/emirpasic/gods@v1.18.1\" target=\"_blank\">https://pkg.go.dev/github.com/emirpasic/gods@v1.18.1</a> and <a href=\"https://pkg.go.dev/github.com/emirpasic/gods/v2@v2.0.0-alpha\" target=\"_blank\">https://pkg.go.dev/github.com/emirpasic/gods/v2@v2.0.0-alpha</a> library.</p>"
+                ],
+                "python3": [
+                    "Python3",
+                    "<p><code>Python 3.11</code>.</p>\r\n\r\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\"https://docs.python.org/3/library/array.html\" target=\"_blank\">array</a>, <a href=\"https://docs.python.org/3/library/bisect.html\" target=\"_blank\">bisect</a>, <a href=\"https://docs.python.org/3/library/collections.html\" target=\"_blank\">collections</a>. If you need more libraries, you can import it yourself.</p>\r\n\r\n<p>For Map/TreeMap data structure, you may use <a href=\"http://www.grantjenks.com/docs/sortedcontainers/\" target=\"_blank\">sortedcontainers</a> library.</p>"
+                ],
+                "scala": [
+                    "Scala",
+                    "<p><code>Scala 3.3.1</code>.</p>"
+                ],
+                "kotlin": [
+                    "Kotlin",
+                    "<p><code>Kotlin 1.9.0</code>.</p>\r\n\r\n<p>We are using an experimental compiler provided by JetBrains.</p>"
+                ],
+                "rust": [
+                    "Rust",
+                    "<p><code>Rust 1.79.0</code>. Your code will be compiled with <code>opt-level</code> 2.</p>\r\n\r\n<p>Supports <a href=\"https://crates.io/crates/rand\" target=\"_blank\">rand v0.8</a> and <a href=\"https://crates.io/crates/regex\" target=\"_blank\">regex\u00a0v1</a> from crates.io</p>"
+                ],
+                "php": [
+                    "PHP",
+                    "<p><code>PHP 8.2</code>.</p>\r\n<p>With bcmath module</p>"
+                ],
+                "typescript": [
+                    "Typescript",
+                    "<p><code>TypeScript 5.1.6, Node.js 20.10.0</code>.</p>\r\n\r\n<p>Compile Options: <code>--alwaysStrict --strictBindCallApply --strictFunctionTypes --target ES2022</code></p>\r\n\r\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\"http://node.green/\" target=\"_blank\">new ES2022 features</a>.</p>\r\n\r\n<p><a href=\"https://lodash.com\" target=\"_blank\">lodash.js</a> library is included by default.</p>\r\n\r\n<p>For Priority Queue / Queue data structures, you may use 5.4.0 version of <a href=\"https://github.com/datastructures-js/priority-queue/blob/v5/README.md\" target=\"_blank\">datastructures-js/priority-queue</a> and 4.2.3 version of <a href=\"https://github.com/datastructures-js/queue/tree/v4.2.3\" target=\"_blank\">datastructures-js/queue</a> and 1.0.4 version of <a href=\"https://github.com/datastructures-js/deque/tree/v1.0.4\" target=\"_blank\">datastructures-js/deque</a>.</p>"
+                ],
+                "racket": [
+                    "Racket",
+                    "<p><a href=\"https://docs.racket-lang.org/guide/performance.html#%28tech._c%29\" target=\"_blank\">Racket CS</a> v8.15</p>\r\n\r\n<p>Using <code>#lang racket</code></p>\r\n\r\n<p>Required <code>data/gvector data/queue data/order data/heap</code> automatically for your convenience</p>"
+                ],
+                "erlang": [
+                    "Erlang",
+                    "Erlang/OTP 26"
+                ],
+                "elixir": [
+                    "Elixir",
+                    "Elixir 1.17 with Erlang/OTP 26"
+                ],
+                "dart": [
+                    "Dart",
+                    "<p>Dart 3.2. You may use package <a href=\"https://pub.dev/packages/collection/versions/1.18.0\" target=\"_blank\">collection</a></p>\r\n\r\n<p>Your code will be run directly without compiling</p>"
+                ]
+            },
+            "content_text": "Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.\n\nSymbol       Value\nI             1\nV             5\nX             10\nL             50\nC             100\nD             500\nM             1000\nFor example, 2 is written as II in Roman numeral, just two ones added together. 12 is written as XII, which is simply X + II. The number 27 is written as XXVII, which is XX + V + II.\nRoman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:\n\nI can be placed before V (5) and X (10) to make 4 and 9. \nX can be placed before L (50) and C (100) to make 40 and 90. \nC can be placed before D (500) and M (1000) to make 400 and 900.\n\nGiven a roman numeral, convert it to an integer.\n \nExample 1:\n\nInput: s = \"III\"\nOutput: 3\nExplanation: III = 3.\n\nExample 2:\n\nInput: s = \"LVIII\"\nOutput: 58\nExplanation: L = 50, V= 5, III = 3.\n\nExample 3:\n\nInput: s = \"MCMXCIV\"\nOutput: 1994\nExplanation: M = 1000, CM = 900, XC = 90 and IV = 4.\n\n \nConstraints:\n\n1 <= s.length <= 15\ns contains only the characters ('I', 'V', 'X', 'L', 'C', 'D', 'M').\nIt is guaranteed that s is a valid roman numeral in the range [1, 3999].\n\n",
+            "topics": [
+                "Hash Table",
+                "Math",
+                "String"
+            ],
+            "similarQuestionsLink": [
+                "https://leetcode.com/problems/integer-to-roman"
+            ]
+        }
+    }
+}
