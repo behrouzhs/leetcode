@@ -42,6 +42,25 @@ Constraints:
 s consists of parentheses only '()[]{}'.
 """
 
+
 class Solution:
     def isValid(self, s: str) -> bool:
-        pass
+        bracket_map = {
+            '(': ')',
+            '{': '}',
+            '[': ']'
+        }
+        bracket_stack = []
+        for ch in s:
+            if ch in '({[':
+                bracket_stack.append(ch)
+            else:
+                if not bracket_stack:
+                    return False
+                last = bracket_stack.pop()
+                if ch != bracket_map[last]:
+                    return False
+        
+        if bracket_stack:
+            return False
+        return True
