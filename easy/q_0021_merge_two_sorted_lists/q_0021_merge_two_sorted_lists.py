@@ -35,11 +35,61 @@ The number of nodes in both lists is in the range [0, 50].
 Both list1 and list2 are sorted in non-decreasing order.
 """
 
+
+from typing import Optional
+
+
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    
+    def print(self):
+        cur = self
+        while cur is not None:
+            print(cur.val, end=" ")
+            cur = cur.next
+        print()
+
+
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        if list1 is None and list2 is None:
+            return None
+        
+        merged = None
+        while list1 or list2:
+            if merged is None:
+                merged = ListNode()
+                cur = merged
+            else:
+                cur.next = ListNode()
+                cur = cur.next
+
+            if not list2 or (list1 and list1.val <= list2.val):
+                cur.val = list1.val
+                list1 = list1.next
+            else:
+                cur.val = list2.val
+                list2 = list2.next
+        
+        return merged
+
+
+class Solution2:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+        dummy = ListNode()
+        cur = dummy
+        
+        while list1 and list2:
+            if list1.val < list2.val:
+                cur.next = list1
+                list1 = list1.next
+            else:
+                cur.next = list2
+                list2 = list2.next
+            cur = cur.next
+        
+        cur.next = list1 if list1 else list2
+        return dummy.next
