@@ -50,6 +50,17 @@ Constraints:
 nums is sorted in non-decreasing order.
 """
 
+from typing import List
+
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        pass
+        i, j = 0, 1
+        while i < (len(nums) - 1) and j < len(nums):
+            if nums[i] == nums[j]:
+                j += 1
+            else:
+                nums[i + 1] = nums[j]
+                i += 1
+                j += 1
+        return i + 1, nums
